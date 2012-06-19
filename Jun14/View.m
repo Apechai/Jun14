@@ -34,25 +34,33 @@
     // Drawing code
     UIFont *font = [UIFont systemFontOfSize: 14.0];
     
-    NSURL *url = [[NSURL alloc] initWithString:
+    NSURL *luluURL = [[NSURL alloc] initWithString:
                   @"http://finance.yahoo.com/d/quotes.csv?s=LULU&f=sllt1"];
     NSError *error;
-    NSString *string = [[NSString alloc]
-                        initWithContentsOfURL: url
+    NSString *lulu = [[NSString alloc]
+                        initWithContentsOfURL: luluURL
                         encoding: NSUTF8StringEncoding  
                         error: &error
                         ];
     
-    if(string == nil) {
-        string = [error localizedDescription];
+    if(lulu == nil) {
+        lulu = [error localizedDescription];
     }
-    CGPoint point = CGPointMake(0,0);
-    [string drawAtPoint: point withFont: font];
+
+    
+    NSString *luluPrice = [[lulu substringFromIndex:NSMaxRange([lulu rangeOfString:@"<b>"])] substringToIndex:5];
+    
+    lulu = [NSString stringWithFormat:@"%@%@",@"Latest LULU price is: " ,luluPrice];
+    
+    CGPoint point = CGPointMake(10,10);
+    [lulu drawAtPoint: point withFont: font];
     
     NSString *string2 = [[NSString alloc] initWithString:
-                         @"Hello buyer"];
+                         @"Hello stock person!"];
     CGPoint point2 = CGPointMake(0,100);
     [string2 drawAtPoint: point2 withFont: font];
+
+    
 }
 
 
