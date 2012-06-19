@@ -46,9 +46,13 @@
     if(string == nil) {
         string = [error localizedDescription];
     }
-    // NSString *string = @"Hello, World!";
     CGPoint point = CGPointMake(0,0);
     [string drawAtPoint: point withFont: font];
+    
+    NSString *string2 = [[NSString alloc] initWithString:
+                         @"Hello buyer"];
+    CGPoint point2 = CGPointMake(0,100);
+    [string2 drawAtPoint: point2 withFont: font];
 }
 
 

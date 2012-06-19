@@ -12,19 +12,32 @@
 @implementation Jun14AppDelegate
 
 @synthesize window = _window;
+@synthesize _window_second;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UIScreen *screen = [UIScreen mainScreen];
     CGRect applicationFrame = screen.applicationFrame;
-    CGRect bounds = screen.bounds;
     
+
+    
+    CGRect bounds = screen.bounds;
     view = [[View alloc] initWithFrame: applicationFrame];
     self.window = [[UIWindow alloc] initWithFrame: bounds];
     
     //self.window.backgroundColor = [UIColor whiteColor];
     [self.window addSubview: view];
     [self.window makeKeyAndVisible];
+    
+  //  CGRect bounds2 = {CGPointMake(100,200), CGSizeMake(20, 20)};
+  //  view_second = [[View alloc] initWithFrame:applicationFrame];
+    
+  //  self._window_second = [[UIWindow alloc] initWithFrame: bounds2];
+  //  [self._window_second addSubview: view_second];
+  //  [self._window_second makeKeyAndVisible];
+
+    
+    
     return YES;
 
     // self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

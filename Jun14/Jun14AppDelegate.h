@@ -12,8 +12,11 @@
 @interface Jun14AppDelegate : UIResponder <UIApplicationDelegate>{
     View *view;
     UIWindow *_window;
+    View *view_second;
+    UIWindow *_window_second;
 }
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow *_window_second;
 
 @end
